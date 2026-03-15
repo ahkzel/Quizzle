@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins';
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+header {
+    background-color: #29054c;
+    color: white;
+    padding: 15px 20px;
+    position: relative;
+    border-bottom: 2px solid black;
+    border-radius: 0px 0px 15px 15px;
+}
+
+.header-container {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-container h1{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.retour-home{
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 8px;
+    color: #7c3aed;
+    transition: 0.2s ease-in;
+}
+
+.retour-home:hover{
+    transform: scale(1.05);
+}
+
+.user-links {
+    display: flex;
+    gap: 10px;
+    font-size: 16px;
+    align-items: center;
+}
+
+.user-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.user-links a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    background-color: #cfcfcf;
+    margin: 30px;
+    align-items: center;
+    padding: 30px 20px;
+    gap: 20px;
+    border-radius: 15px;
+    box-shadow: 8px 8px rgba(0, 0, 0, 1);
+}
+
+.main-title {
+    font-size: 30px;
+}
+
+.quizz-table {
+    width: 90%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(128, 0, 128, 1);
+}
+
+.quizz-table-head {
+    background-color: #7c3aed;
+    color: #ffffff;
+}
+
+.quizz-table-head th {
+    padding: 14px 20px;
+    text-align: left;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    font-size: 0.9rem;
+}
+
+.quizz-table tbody tr {
+    border-bottom: 1px solid #ede9fe;
+    transition: background-color 0.2s ease;
+}
+
+.quizz-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.quizz-table tbody tr:hover {
+    background-color: #f5f3ff;
+}
+
+.quizz-table tbody td {
+    padding: 12px 20px;
+    color: #374151;
+    font-size: 0.95rem;
+}
+
+.form-account {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 300px;
+}
+
+.form-account input {
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #7c3aed;
+    box-sizing: border-box;
+    transition: 0.15s ease-in;
+}
+
+.form-account input:hover {
+    background-color: #eaeaea;
+}
+
+.form-account label {
+    width: 100%;
+}
+
+.form-account button {
+    margin: 10px;
+    font-size: 15px;
+    color: white;
+    background-color: #7c3aed;
+    padding: 10px 15px 10px 15px;
+    border-radius: 8px;
+    border: black solid 1px;
+    transition: 0.1s ease-in;
+}
+
+.form-account button:hover {
+    transform: scale(1.05)
+}
+
+footer {
+    text-align: right;
+    background-color: #101418;
+    color: white;
+    padding: 15px 0;
+    margin-top: auto;
+}
+
+footer p {
+    margin-right: 10px;
+}
