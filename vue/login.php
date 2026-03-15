@@ -19,7 +19,11 @@
         <main>
             <div class="main-content">
                 <form action="index.php?url=submit-connexion" method="POST" class="form-account">
+<<<<<<< HEAD
                     <h2>Se connecter</h2>
+=======
+                    <h2 class="main-title">Se connecter</h2>
+>>>>>>> 21cf8a92e555a037057e7dc963aba8561e37cf85
 
                     <?php if (isset($_SESSION["error_msg"])) : ?>
                         <h3><?= htmlspecialchars($_SESSION["error_msg"]);?></h3>
@@ -32,6 +36,10 @@
                     <input type="password" id="password" name="passwordU" required>
 
                     <button type="submit" class="submit-account">Valider</button>
+<<<<<<< HEAD
+=======
+                </form>
+>>>>>>> 21cf8a92e555a037057e7dc963aba8561e37cf85
             </div>
         </main>
     </body>

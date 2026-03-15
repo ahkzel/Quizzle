@@ -28,9 +28,38 @@
         <main>
             <div class="main-content">
                 <h2 class="main-title">Questionnaires publics</h2>
+<<<<<<< HEAD
                 <?php foreach ($quizzes as $quizz): ?>
 
                 <?php endforeach; ?>
+=======
+                <?php foreach ($all_quizzes as $quizz): ?>
+
+                <?php endforeach; ?>
+
+                <table class="quizz-table">
+                    <thead class="quizz-table-head">
+                        <tr>
+                            <th>Nom</th>
+                            <th>Thème</th>
+                            <th>Auteur</th>
+                            <th>Nombre de questions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($all_quizzes as $quizz) : ?>
+                            <?php if ($quizz["publie"] == 1) : ?>
+                                <tr>
+                                    <td class="quizz-table-cell"><b><?= htmlspecialchars($quizz["name_quizz"]) ?></b></td>
+                                    <td class="quizz-table-cell"><?= htmlspecialchars($quizz["theme"]) ?></td>
+                                    <td class="quizz-table-cell"><?= htmlspecialchars($quizz["user"]) ?></td>
+                                    <td class="quizz-table-cell"><?= htmlspecialchars($quizz["nb_questions"]) ?></td>
+                                </tr>
+                            <?php endif ?>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+>>>>>>> 21cf8a92e555a037057e7dc963aba8561e37cf85
             </div>
         </main>
 

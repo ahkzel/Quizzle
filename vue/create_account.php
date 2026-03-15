@@ -17,6 +17,7 @@
         </header>
 
         <main>
+<<<<<<< HEAD
             <form action="index.php?url=submit-create-account" method="POST" class="form-account">
                 <h2>Créer un compte</h2>
 
@@ -38,6 +39,31 @@
 
                 <button type="submit" class="submit-account">Valider</button>
             </form>
+=======
+            <div class="main-content">
+                <form action="index.php?url=submit-create-account" method="POST" class="form-account">
+                    <h2 class="main-title">Créer un compte</h2>
+
+                    <?php if (isset($_SESSION["error_msg"])) : ?>
+                        <h3><?= htmlspecialchars($_SESSION["error_msg"]);?></h3>
+                    <?php endif; ?>
+
+                    <label for="first_name">Prénom :</label>
+                    <input type="first_name" id="first_name" name="first_nameU" required>
+
+                    <label for="name">Nom :</label>
+                    <input type="name" id="name" name="nameU" required>
+
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" name="emailU" required>
+
+                    <label for="password">Mot de passe :</label>
+                    <input type="password" id="password" name="passwordU" required>
+
+                    <button type="submit" class="submit-account">Valider</button>
+                </form>
+            </div>
+>>>>>>> 21cf8a92e555a037057e7dc963aba8561e37cf85
         </main>
     </body>
 </html>
