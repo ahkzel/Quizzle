@@ -6,9 +6,6 @@ class User_model {
         if (isset($pdo)) $this->pdo = $pdo;
     }
 
-<<<<<<< HEAD
-    
-=======
     public function get_user_from_id($id_user) {
         $user = array();
 
@@ -26,6 +23,5 @@ class User_model {
 
         return $user;
     }
->>>>>>> 21cf8a92e555a037057e7dc963aba8561e37cf85
 }
 ?>

@@ -28,11 +28,6 @@
         <main>
             <div class="main-content">
                 <h2 class="main-title">Questionnaires publics</h2>
-<<<<<<< HEAD
-                <?php foreach ($quizzes as $quizz): ?>
-
-                <?php endforeach; ?>
-=======
                 <?php foreach ($all_quizzes as $quizz): ?>
 
                 <?php endforeach; ?>
@@ -59,7 +54,6 @@
                         <?php endforeach; ?>
                     </tbody>
                 </table>
->>>>>>> 21cf8a92e555a037057e7dc963aba8561e37cf85
             </div>
         </main>
 
