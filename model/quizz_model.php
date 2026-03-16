@@ -26,5 +26,21 @@ class Quizz_model {
 
         return $all_quizzes;
     }
+
+    public function get_questionnaire_nom($id_questionnaire) {
+        $result = array();
+        try {
+            $req = $this->pdo->prepare("select nom from questionnaire where id = :id_questionnaire;");
+            $req->bindValue(':id_questionnaire', $id_questionnaire, PDO::PARAM_INT);
+            $req->execute();
+
+            $result = $req->fetch(PDO::FETCH_ASSOC);
+        }
+        catch (PDOException $e) {
+            print($e->getMessage());
+            die();
+        }
+        return $result['nom'];
+    }
 }
 ?>

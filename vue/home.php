@@ -12,7 +12,10 @@
     <body>
         <header>
             <div class="header-container">
-                <a href="index.php" class="retour-home">⬅ Accueil</a>
+                <div class="header-left">
+                    <a href="index.php" class="retour-home">⬅ Accueil</a>
+                    <!-- <a href="index.php?url=questions" class="retour-home">⬅ Questions</a> -->
+                </div>
 
                 <h1>Accueil</h1>
                 
@@ -39,6 +42,7 @@
                             <th>Thème</th>
                             <th>Auteur</th>
                             <th>Nombre de questions</th>
+                            <th>Voir les questions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -49,6 +53,11 @@
                                     <td class="quizz-table-cell"><?= htmlspecialchars($quizz["theme"]) ?></td>
                                     <td class="quizz-table-cell"><?= htmlspecialchars($quizz["user"]) ?></td>
                                     <td class="quizz-table-cell"><?= htmlspecialchars($quizz["nb_questions"]) ?></td>
+                                    <td class="quizz-table-cell">
+                                        <a href="index.php?url=questions&id_questionnaire=<?= $quizz['id'] ?>">
+                                            <b>Voir les questions</b>
+                                        </a>
+                                    </td>
                                 </tr>
                             <?php endif ?>
                         <?php endforeach; ?>

@@ -29,7 +29,7 @@ class Quizz_controller {
             $TEMP_name_user = $this->user_model->get_user_from_id($TEMP_quizz["id_user"])["name"];
             $TEMP_nb_question = $this->contains_model->get_question_number_from_quizz_id($TEMP_quizz["id"]);
 
-            $all_quizzes[] = (["name_quizz" => $TEMP_quizz["nom"], "publie" => $TEMP_quizz["publie"], "theme" => $TEMP_label_theme,
+            $all_quizzes[] = (["id" => $TEMP_quizz["id"], "name_quizz" => $TEMP_quizz["nom"], "publie" => $TEMP_quizz["publie"], "theme" => $TEMP_label_theme,
             "user" => $TEMP_name_user, "nb_questions" => $TEMP_nb_question]);
         }
         include __DIR__."/../vue/home.php";
