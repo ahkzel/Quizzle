@@ -46,12 +46,12 @@
                                 <td class="quizz-table-cell"><?= htmlspecialchars($question["type"]) ?></td>
                                 <td class="quizz-table-cell">
                                     <a href="index.php?url=ticket&id_question=<?= $question['id'] ?>">
-                                        <button class="btn-ticket">Ticket</button>
+                                        <button class="generic-button">Ticket</button>
                                     </a>
                                 </td>
                                 <td class="quizz-table-cell">
                                     <a href="index.php?url=tickets&id_question=<?= $question['id'] ?>">
-                                        <button class="btn-ticket">Tous les tickets</button>
+                                        <button class="generic-button">Tous les tickets</button>
                                     </a>
                                 </td>
                             </tr>

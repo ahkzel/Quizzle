@@ -43,6 +43,7 @@
                             <th>Auteur</th>
                             <th>Nombre de questions</th>
                             <th>Voir les questions</th>
+                            <th>Répondre</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -54,8 +55,13 @@
                                     <td class="quizz-table-cell"><?= htmlspecialchars($quizz["user"]) ?></td>
                                     <td class="quizz-table-cell"><?= htmlspecialchars($quizz["nb_questions"]) ?></td>
                                     <td class="quizz-table-cell">
-                                        <a href="index.php?url=questions&id_questionnaire=<?= $quizz['id'] ?>">
+                                        <a class="generic-link" href="index.php?url=questions&id_questionnaire=<?= $quizz['id'] ?>">
                                             <b>Voir les questions</b>
+                                        </a>
+                                    </td>
+                                    <td class="quizz-table-cell">
+                                        <a class="generic-link" href="index.php?url=answer_quizz&id_questionnaire=<?= $quizz['id'] ?>">
+                                            <b>Répondre au questionnaire</b>
                                         </a>
                                     </td>
                                 </tr>

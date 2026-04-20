@@ -139,6 +139,82 @@ header {
     font-size: 0.95rem;
 }
 
+.generic-button {
+    padding: 5px 15px 5px 15px;
+    background-color: #7c3aed;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    transition: all 0.2s;
+}
+
+.generic-button:hover {
+    background-color: #602db8;
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.generic-link {
+    transition: all 0.2s;
+}
+
+.generic-link:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.generic-form {
+    width: calc(100% - 80px);
+    margin-left: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.question-block {
+    margin-bottom: 1.5rem;
+    border: none;
+}
+
+.question-block legend {
+    font-size: 18px;
+    background-color: #7c3aed;
+    color: white;
+    border-radius: 7px;
+    padding: 5px 15px 5px 15px;
+    gap: 15px;
+}
+
+.answers-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.answer-label {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+}
+
+.btn-submit {
+    padding: 5px 15px 5px 15px;
+    background-color: #7c3aed;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 17px;
+    transition: all 0.2s;
+}
+
+.btn-submit:hover {
+    background-color: #602db8;
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
 .form-account {
     display: flex;
     flex-direction: column;

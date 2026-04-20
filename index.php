@@ -18,7 +18,9 @@ $forms = $_POST ?? NULL;
 $PDOC = new Pdo_controller();
 $userC = new User_controller($PDOC);
 $quizzC = new Quizz_controller($PDOC);
-$questionC = new Question_controller($PDOC);
+$answerC = new Answer_controller($PDOC);
+$verifyC = new Verify_controller($PDOC);
+$questionC = new Question_controller($PDOC, $answerC, $verifyC);
 $ticketC = new Ticket_controller($PDOC);
 
 switch (TRUE) {
@@ -34,6 +36,13 @@ switch (TRUE) {
     case ($url === "questions"):
         $id_questionnaire = isset($_GET['id_questionnaire']) ? (int)$_GET['id_questionnaire'] : null;
         $questionC->show_questions($id_questionnaire);
+        break;
+    case ($url === "answer_quizz"):
+        $id_questionnaire = isset($_GET['id_questionnaire']) ? (int)$_GET['id_questionnaire'] : null;
+        $questionC->prepare_answer_quizz($id_questionnaire);
+        break;
+    case ($url === "submit-answer-quizz"):
+        
         break;
     case ($url === "ticket"):
         $id_question = isset($_GET['id_question']) ? (int)$_GET['id_question'] : null;
