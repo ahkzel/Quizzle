@@ -63,11 +63,17 @@
                         <?php endforeach; ?>
                     </tbody>
                 </table>
+
+                <canvas id="quizz1"></canvas>
+                <canvas id="quizz2"></canvas>
+                <canvas id="quizz3"></canvas>
             </div>
         </main>
 
         <footer>
             <p>&copy; 2025 - Wiki40k, Axel Beaulieu-Luangkham. Tous droits réservés.</p>
         </footer>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="assets/scripts.js"></script>
     </body>
 </html>
