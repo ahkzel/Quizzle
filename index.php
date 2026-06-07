@@ -33,6 +33,20 @@ switch (TRUE) {
     case ($url === "create-account"):
         $userC->show_create_account();
         break;
+    case ($url === "submit-connexion"):
+        $user_email = $_POST['emailU'];
+        $user_pwd = $_POST['passwordU'];
+        $userC->check_connexion($user_email, $user_pwd);
+        $quizzC->show_homepage();
+        break;
+    case ($url === "submit-create-account"):
+        $user_name = $_POST['nameU'];
+        $user_first_name = $_POST['first_nameU'];
+        $user_email = $_POST['emailU'];
+        $user_pwd = $_POST['passwordU'];
+        $userC->create_account($user_name, $user_first_name, $user_email, $user_pwd);
+        $quizzC->show_homepage();
+        break;
     case ($url === "questions"):
         $id_questionnaire = isset($_GET['id_questionnaire']) ? (int)$_GET['id_questionnaire'] : null;
         $questionC->show_questions($id_questionnaire);
@@ -42,7 +56,15 @@ switch (TRUE) {
         $questionC->prepare_answer_quizz($id_questionnaire);
         break;
     case ($url === "submit-answer-quizz"):
-        
+        $id_questionnaire = isset($_POST['id_questionnaire']) ? (int)$_POST['id_questionnaire'] : null;
+        $user_answers = [];
+        foreach ($_POST as $key => $value) {
+            if (str_starts_with($key, "question_")) {
+                $id_question = str_replace("question_", "", $key);
+                $user_answers[$id_question] = $value;
+            }
+        }
+        $questionC->show_results($id_questionnaire, $user_answers);
         break;
     case ($url === "ticket"):
         $id_question = isset($_GET['id_question']) ? (int)$_GET['id_question'] : null;

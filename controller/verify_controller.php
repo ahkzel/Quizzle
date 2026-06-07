@@ -21,5 +21,9 @@ class Verify_controller {
     public function get_weight_from_question_answer($id_question, $id_answer) {
         return $this->get_verify_from_question_answer($id_question, $id_answer)['weight'];
     }
+
+    public function get_right_answer_from_question($id_question) {
+        return $this->verify_model->get_right_answer_from_question($id_question);
+    }
 }
 ?>

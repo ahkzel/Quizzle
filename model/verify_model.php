@@ -26,5 +26,20 @@ class Verify_model {
         }
         return $verify;
     }
+
+    public function get_right_answer_from_question($id_question) {
+        try {
+            $req = $this->pdo->prepare("select verifie.id_reponse as id from verifie where verifie.id_question = :id_question and veracite = 1;");
+            $req->bindValue(':id_question', $id_question, PDO::PARAM_INT);
+            $req->execute();
+
+            $row = $req->fetch(PDO::FETCH_ASSOC);
+            return $row ? (int)$row["id"] : null;
+        }
+        catch (PDOException $e) {
+            print($e->getMessage());
+            die();
+        }
+    }
 }
 ?>

@@ -20,10 +20,8 @@
                 <h1>Accueil</h1>
                 
                 <div class="user-links">
-                    <?php if (!isset($_SESSION["emailU"])) : ?>
-                        <a href="index.php?url=create-account">Créer un compte</a>
-                        <a href="index.php?url=login">Se connecter</a>
-                    <?php endif; ?>
+                    <a href="index.php?url=create-account">Créer un compte</a>
+                    <a href="index.php?url=login">Se connecter</a>
                 </div>
             </div>
         </header>

@@ -41,5 +41,25 @@ class Question_controller {
         $questionnaire_nom = $this->quizz_model->get_questionnaire_nom($id_questionnaire);
         include __DIR__."/../vue/answer_quizz.php";
     }
+
+    public function show_results($id_questionnaire, $user_results) {
+        $number_right_answer = 0;
+        $total_number_of_answer = 0;
+        $user_score = 0;
+        $max_score = 0;
+
+        $questionnaire_nom = $this->quizz_model->get_questionnaire_nom($id_questionnaire);
+        foreach ($user_results as $TEMP_id_question => $TEMP_id_reponse_choisie) {
+            $TEMP_question_verify = $this->verify_controller->get_verify_from_question_answer($TEMP_id_question, $TEMP_id_reponse_choisie);
+            $TEMP_right_answer_id = $this->verify_controller->get_right_answer_from_question($TEMP_id_question);
+            $max_score += $TEMP_question_verify['weight'];
+            $total_number_of_answer++;
+            if ($TEMP_right_answer_id == $TEMP_id_reponse_choisie) {
+                $user_score += $TEMP_question_verify['weight'];
+                $number_right_answer++;
+            }
+        }
+        include __DIR__."/../vue/results_quizz.php";
+    }
 }
 ?>

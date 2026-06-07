@@ -1,7 +1,3 @@
-const questions_type_1 = ["binaire", "choix_multiple", "binaire", "binaire", "choix_multiple", "binaire", "binaire"];
-const questions_type_2 = ["choix_multiple", "choix_multiple", "choix_multiple", "binaire"];
-const questions_type_3 = ["littérature", "cinema", "cinema", "nature"];
-
 function processData(responses) {
     const counts = {};
     responses.forEach(r => {
@@ -13,23 +9,19 @@ function processData(responses) {
     };
 }
 
-function createChart(id, labels, data) {
+function createChart(id, type, labels, data, colors) {
     new Chart(document.getElementById(id), {
-        type: 'pie',
+        type: type,
         data: {
             labels: labels,
             datasets: [{
-                data: data
+                data: data,
+                backgroundColor: colors || ['#4CAF50', '#8b8b8b']
             }]
         }
     });
 }
 
-const q1 = processData(questions_type_1);
-createChart('quizz1', q1.labels, q1.values);
+createChart('quizz_score_result', 'pie', ['Points', 'Points manqués'], [user_score, max_score - user_score]);
 
-const q2 = processData(questions_type_2);
-createChart('quizz2', q2.labels, q2.values);
-
-const q3 = processData(questions_type_3);
-createChart('quizz3', q3.labels, q3.values);
+createChart('right_answer_number_result', 'pie', ['Bonnes réponses', 'Mauvaises réponses'], [number_right_answer, total_number_of_answer - number_right_answer]);
