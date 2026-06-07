@@ -14,7 +14,6 @@
             <div class="header-container">
                 <div class="header-left">
                     <a href="index.php" class="retour-home">⬅ Accueil</a>
-                    <!-- <a href="index.php?url=questions" class="retour-home">⬅ Questions</a> -->
                 </div>
 
                 <h1>Accueil</h1>
@@ -29,9 +28,16 @@
         <main>
             <div class="main-content">
                 <h2 class="main-title">Questionnaires publics</h2>
-                <?php foreach ($all_quizzes as $quizz): ?>
 
-                <?php endforeach; ?>
+                <div class="theme-filter-box">
+                    <label for="theme-filter">Filtrer par thème :</label>
+                    <select id="theme-filter">
+                        <option value="">Tous les thèmes</option>
+                        <?php foreach ($themes as $theme): ?>
+                            <option value="<?= htmlspecialchars($theme) ?>"><?= htmlspecialchars($theme) ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
 
                 <table class="quizz-table">
                     <thead class="quizz-table-head">
@@ -67,17 +73,12 @@
                         <?php endforeach; ?>
                     </tbody>
                 </table>
-
-                <canvas id="quizz1"></canvas>
-                <canvas id="quizz2"></canvas>
-                <canvas id="quizz3"></canvas>
             </div>
         </main>
 
         <footer>
             <p>&copy; 2025 - Wiki40k, Axel Beaulieu-Luangkham. Tous droits réservés.</p>
         </footer>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="assets/scripts.js"></script>
     </body>
 </html>

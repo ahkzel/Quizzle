@@ -22,6 +22,7 @@ class Quizz_controller {
 
     public function show_homepage() {
         $all_quizzes = array();
+        $themes = $this->theme_model->get_all_themes();
         $TEMP_all_quizzes = $this->quizz_model->get_all_quizzes();
 
         foreach ($TEMP_all_quizzes as $TEMP_quizz){

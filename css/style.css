@@ -98,6 +98,24 @@ header {
     font-size: 30px;
 }
 
+.theme-filter-box {
+    display: flex;
+    align-self: flex-start;
+    margin-left: 100px;
+}
+
+.theme-filter-box select {
+    margin-left: 15px;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    transition: all 0.2s ease-in;
+}
+
+.theme-filter-box select:hover {
+    background-color: #dedede;
+}
+
 .quizz-table {
     width: 90%;
     border-collapse: collapse;

@@ -23,6 +23,22 @@ class Theme_model {
 
         return $theme_name;
     }
+
+    public function get_all_themes() {
+        $themes = array();
+
+        try {
+            $req = $this->pdo->prepare("select nom from theme;");
+            $req->execute();
+
+            $themes = $req->fetchAll(PDO::FETCH_COLUMN);
+        }
+        catch (PDOException $e) {
+            print($e->getMessage());
+            die();
+        }
+        return $themes;
+    }
     
 }
 ?>
